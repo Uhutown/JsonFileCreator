@@ -21,12 +21,17 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Programming/JavaFX/javafx-sdk-19/lib/javafx.fxml.jar"/>
 	<classpathentry kind="lib" path="C:/Programming/JavaFX/javafx-sdk-19/lib/javafx.graphics.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Programming/Gson/gson-2.6.2.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Programming/JavaFX/javafx-sdk-19/lib/javafx.fxml.jar"/>
 	<classpathentry kind="lib" path="C:/Programming/JavaFX/javafx-sdk-19/lib/javafx.media.jar"/>
 	<classpathentry kind="lib" path="C:/Programming/JavaFX/javafx-sdk-19/lib/javafx.swing.jar"/>
 	<classpathentry kind="lib" path="C:/Programming/JavaFX/javafx-sdk-19/lib/javafx.web.jar"/>

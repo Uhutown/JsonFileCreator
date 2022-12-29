@@ -12,9 +12,16 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void start(Stage primaryStage) {
+
+		loadDefaultScreen(primaryStage);
 
 		primaryStage.setTitle("Hallo Welt!");
 
@@ -41,7 +48,7 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 
-	public static void main(String[] args) {
-		launch(args);
+	private void loadDefaultScreen(final Stage stage) {
+		final Text text = new Text("");
 	}
 }
