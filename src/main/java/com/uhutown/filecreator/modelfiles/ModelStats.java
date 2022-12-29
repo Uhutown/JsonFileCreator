@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.google.gson.Gson;
 import com.uhutown.filecreator.utils.FileReader;
+import com.uhutown.filecreator.utils.Files;
 
 public class ModelStats {
 
@@ -30,17 +31,14 @@ public class ModelStats {
 
 		final Gson gson = new Gson();
 
-		final Map<String, String> entrySet = FileReader.readallFilesfromDierectory("jsonfilecreator/modelrender",
-				false);
+		final Map<String, String> entrySet = FileReader.readallFilesfromDierectory(Files.MODELFILES.getPath(), false);
 
 		final Map<String, Object> content = new HashMap<>();
 
 		entrySet.forEach((filename, file) -> {
 			if (!filename.endsWith("extention.json")) {
-
 				final ModelStats json = gson.fromJson(file, ModelStats.class);
 				content.put(filename, json);
-
 			} else {
 				final ModelExtention json = gson.fromJson(file, ModelExtention.class);
 				content.put(filename, json);
