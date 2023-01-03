@@ -1,17 +1,15 @@
 package com.uhutown.filecreator.modelfiles;
 
-import java.util.HashMap;
 import java.util.Map;
 
-public class ModelExtention {
+import com.uhutown.filecreator.utils.ITypeable;
 
-	private Map<String, String> extention;
+public class ModelExtention implements ITypeable {
 
-	public Map<String, String> getExtention() {
+	public Map<String, String> extention;
 
-		if (extention == null)
-			extention = new HashMap<>();
-
-		return extention;
+	@Override
+	public String getType() {
+		return "Model Render File";
 	}
 }

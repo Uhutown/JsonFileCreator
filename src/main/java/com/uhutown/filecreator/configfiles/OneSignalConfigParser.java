@@ -2,28 +2,15 @@ package com.uhutown.filecreator.configfiles;
 
 import java.util.List;
 
-public class OneSignalConfigParser {
+import com.uhutown.filecreator.utils.ITypeable;
 
-	private String currentSignal;
-	private List<String> values;
+public class OneSignalConfigParser implements ITypeable {
 
-	public String getCurrentSignal() {
-		return currentSignal;
-	}
+	public String currentSignal;
+	public List<String> values;
 
-	public List<String> getValues() {
-		return values;
-	}
-
-	public void setCurrentSignal(final String currentSignal) {
-		this.currentSignal = currentSignal;
-	}
-
-	public void setValues(final List<String> values) {
-		this.values = values;
-	}
-
-	public void addValue(final String value) {
-		values.add(value);
+	@Override
+	public String getType() {
+		return "One Signal Config";
 	}
 }

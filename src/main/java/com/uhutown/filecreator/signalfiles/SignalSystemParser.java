@@ -6,21 +6,19 @@ import java.util.Map;
 
 import com.google.gson.Gson;
 import com.uhutown.filecreator.utils.FileReader;
+import com.uhutown.filecreator.utils.Files;
+import com.uhutown.filecreator.utils.ITypeable;
 
-public class SignalSystemParser {
+public class SignalSystemParser implements ITypeable {
 
 	public SignalPropertiesBuilder systemProperties;
 	public List<SEPropertyParser> seProperties;
 
 	private static transient final Gson GSON = new Gson();
 
-	public List<SEPropertyParser> getSEProperties() {
-		return seProperties;
-	}
-
 	public static Map<String, SignalSystemParser> getSignalSystems() {
 
-		final Map<String, String> systems = FileReader.readallFilesfromDierectory("", false);
+		final Map<String, String> systems = FileReader.readallFilesfromDierectory(Files.SIGNALFILES.getPath(), false);
 
 		final Map<String, SignalSystemParser> properties = new HashMap<>();
 
@@ -33,5 +31,10 @@ public class SignalSystemParser {
 		});
 
 		return properties;
+	}
+
+	@Override
+	public String getType() {
+		return "Signal File";
 	}
 }

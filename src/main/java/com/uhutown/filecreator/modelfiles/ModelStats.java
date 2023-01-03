@@ -6,30 +6,18 @@ import java.util.Map;
 import com.google.gson.Gson;
 import com.uhutown.filecreator.utils.FileReader;
 import com.uhutown.filecreator.utils.Files;
+import com.uhutown.filecreator.utils.ITypeable;
 
-public class ModelStats {
+public class ModelStats implements ITypeable {
 
-	private Map<String, String> textures;
-	private Map<String, Models> models;
+	public Map<String, String> textures;
+	public Map<String, Models> models;
 
-	public Map<String, Models> getModels() {
+	public static transient final Map<String, Object> MODELFILES = getfromJson();
 
-		if (models == null)
-			models = new HashMap<>();
-
-		return models;
-	}
-
-	public Map<String, String> getTextures() {
-		if (textures == null)
-			textures = new HashMap<>();
-
-		return textures;
-	}
+	private static transient final Gson GSON = new Gson();
 
 	public static Map<String, Object> getfromJson() {
-
-		final Gson gson = new Gson();
 
 		final Map<String, String> entrySet = FileReader.readallFilesfromDierectory(Files.MODELFILES.getPath(), false);
 
@@ -37,13 +25,18 @@ public class ModelStats {
 
 		entrySet.forEach((filename, file) -> {
 			if (!filename.endsWith("extention.json")) {
-				final ModelStats json = gson.fromJson(file, ModelStats.class);
+				final ModelStats json = GSON.fromJson(file, ModelStats.class);
 				content.put(filename, json);
 			} else {
-				final ModelExtention json = gson.fromJson(file, ModelExtention.class);
+				final ModelExtention json = GSON.fromJson(file, ModelExtention.class);
 				content.put(filename, json);
 			}
 		});
 		return content;
+	}
+
+	@Override
+	public String getType() {
+		return "Model Render File";
 	}
 }

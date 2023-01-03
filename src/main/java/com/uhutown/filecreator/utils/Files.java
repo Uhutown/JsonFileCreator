@@ -11,10 +11,11 @@ public final class Files {
 	public static final File SHUNTINGCONFIGS = new File("jsonfilecreator/configfiles/shuntingconfigs");
 	public static final File RESETCONFIGS = new File("jsonfilecreator/configfiles/resetconfigs");
 	public static final File MODELFILES = new File("jsonfilecreator/modelrenderfiles");
+	public static final File SIGNALFILES = new File("jsonfilecreator/signalfiles");
 
 	public static void intFiles() {
 		final Field[] fields = Files.class.getFields();
-		System.out.println("Cheking if directories are present...");
+		System.out.println("Cheking if all directories are present...");
 		for (final Field field : fields) {
 			final int modifiers = field.getModifiers();
 			if (Modifier.isStatic(modifiers) && Modifier.isFinal(modifiers) && Modifier.isPublic(modifiers)) {
