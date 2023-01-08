@@ -4,6 +4,7 @@ module JsonFileCreator {
 	requires javafx.base;
 	requires gson;
 	requires java.sql;
+	requires java.desktop;
 
 	opens com.uhutown.filecreator.main to javafx.graphics, javafx.fxml;
 	opens com.uhutown.filecreator.signalfiles to gson;

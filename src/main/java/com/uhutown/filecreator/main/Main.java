@@ -5,8 +5,6 @@ import com.uhutown.filecreator.utils.Files;
 import com.uhutown.filecreator.utils.GsonUtils;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -80,21 +78,12 @@ public class Main extends Application {
 
 		stage.setTitle("JsonFileCreator");
 
-		reload.setOnAction(new EventHandler<ActionEvent>() {
-
-			@Override
-			public void handle(final ActionEvent arg0) {
-				System.out.println("Reloading Files!");
-				loadDefaultScreen(stage);
-
-			}
+		reload.setOnAction(e -> {
+			System.out.println("Reloading Files!");
+			loadDefaultScreen(stage);
 		});
-		newFile.setOnAction(new EventHandler<ActionEvent>() {
-
-			@Override
-			public void handle(final ActionEvent arg0) {
-				newFile.loadNewFileScene(stage);
-			}
+		newFile.setOnAction(e -> {
+			newFile.loadNewFileScene(stage);
 		});
 	}
 
